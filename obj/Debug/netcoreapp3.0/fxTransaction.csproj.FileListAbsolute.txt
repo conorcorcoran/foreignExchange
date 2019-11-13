@@ -1,0 +1,13 @@
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\bin\Debug\netcoreapp3.0\fxTransaction.exe
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\bin\Debug\netcoreapp3.0\fxTransaction.deps.json
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\bin\Debug\netcoreapp3.0\fxTransaction.runtimeconfig.json
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\bin\Debug\netcoreapp3.0\fxTransaction.runtimeconfig.dev.json
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\bin\Debug\netcoreapp3.0\fxTransaction.dll
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\bin\Debug\netcoreapp3.0\fxTransaction.pdb
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\obj\Debug\netcoreapp3.0\fxTransaction.csprojAssemblyReference.cache
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\obj\Debug\netcoreapp3.0\fxTransaction.AssemblyInfoInputs.cache
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\obj\Debug\netcoreapp3.0\fxTransaction.AssemblyInfo.cs
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\obj\Debug\netcoreapp3.0\fxTransaction.dll
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\obj\Debug\netcoreapp3.0\fxTransaction.pdb
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+C:\Users\ccorcoran\dev\dotnet\fxTransaction\obj\Debug\netcoreapp3.0\fxTransaction.csproj.CopyComplete
