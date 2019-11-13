@@ -6,11 +6,11 @@ using Newtonsoft.Json.Linq;
 
 namespace fxTransaction
 {
-    class foreignExchange
-    {
+    class foreignExchange{
             private const string URL = "http://data.fixer.io/api/latest?access_key=a94666c6342e3bbf7fb4c218f6afb915";
         static void Main(string[] args)
         {
+            Dictionary<int, fxTransaction.Transation>  transactions = new Dictionary<int, fxTransaction.Transation>();
             /* Gets the exchange rates from Fixer.io
                The API has different paid levels. The free version
                only allows you to get all current rates against the Euro.
@@ -19,9 +19,23 @@ namespace fxTransaction
             */
             dynamic exchangeData = JObject.Parse( HttpGet(URL));
             JObject rates = exchangeData.rates;
-            
-            using(var reader = new StreamReader(@"C:\Users\ccorcoran\Desktop\fxTransactions\format2.csv"))
+
+
+            //Get all the files in the directory that end with csv
+            Console.WriteLine("Getting files");
+            var files = Directory.GetFiles(@"C:\Users\ccorcoran\Desktop\fxTransactions", "*.csv");
+            List<string> fileNames = new List<string>();
+            for(int i = 0; i < files.Length; i++){
+                fileNames.Add(files[i]);
+            }
+            Console.WriteLine("Got files");
+            int fileIndex = -1;
+            foreach(string file in files){
+                fileIndex++;
+        
+            using(StreamReader reader = new StreamReader(file))
             {
+                Console.WriteLine("Reading file " + fileNames[fileIndex]);
                 
                 List<string> id = new List<string>();
                 List<string> sourceCurrency = new List<string>();
@@ -45,7 +59,8 @@ namespace fxTransaction
                 for(int i = 1; i < id.Count; i++){
                     calculateExchange(sourceCurrency[i], destinationCurrency[i], sourceAmount[i], rates);
                 }
-              Console.WriteLine("Hope");
+                    Console.WriteLine("Done reading file " + fileNames[fileIndex]);
+                }
             }
         }
 
@@ -69,6 +84,7 @@ namespace fxTransaction
                 double srcCurrToEuro = rates[srcCurr].ToObject<double>();
                 double conversionPriceInEuro = 1/srcCurrToEuro;
                 conversionPrice = conversionPriceInEuro * rates[desCurr].ToObject<double>();
+                Console.WriteLine("conversionPrice " + conversionPrice);
             }
 
             double exchangeAmount = double.Parse(amount, System.Globalization.CultureInfo.InvariantCulture);
